@@ -6,6 +6,8 @@ const Router = express.Router()
 
 Router.get("/get-response", aiController.getResponse)
 
-
+Router.get("/help", (req, res, next) => {
+    res.send("Its just a dummy route to save my Git Log")
+})
 
 module.exports = Router;
