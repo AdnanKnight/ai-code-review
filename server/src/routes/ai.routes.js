@@ -4,10 +4,7 @@ const aiController = require("../controller/ai.controller")
 
 const Router = express.Router()
 
-Router.get("/get-response", aiController.getResponse)
+Router.post("/get-review", aiController.getReview)
 
-Router.get("/help", (req, res, next) => {
-    res.send("Its just a dummy route to save my Git Log")
-})
 
 module.exports = Router;

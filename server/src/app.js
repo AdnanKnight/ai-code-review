@@ -3,7 +3,9 @@ const aiRoutes = require('./routes/ai.routes')
 
 const app = express()
 
-app.get('/' , (req, res, next) => {
+app.use(express.json());
+
+app.get('/', (req, res, next) => {
     res.send("Hello, World")
 })
 
