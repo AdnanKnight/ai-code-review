@@ -1,11 +1,19 @@
 import {Route, Routes} from "react-router-dom"
 import './global.css'
 
+import HomeLayout from "./layouts/homeLayout"
+
+import Home from "./components/home"
+
 function App() {
 
   return (
     <>
-      <h1>Hello</h1>
+    <Routes>
+      <Route path="/" element={<HomeLayout/>}>
+        <Route index element={<Home />}/>
+      </Route>
+    </Routes>
     </>
   )
 }
