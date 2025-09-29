@@ -2,7 +2,9 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+
   text-decoration: none;
+  list-style: none;
 
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
@@ -10,7 +12,8 @@
 html,
 body {
   width: 100%;
-  height: 100%
+  height: 100%;
+  font-size: 16px;
 }
 
 /* Components */
@@ -31,11 +34,13 @@ body {
   top: 0;
   left: 0;
 }
+
 .signinlogo {
   position: absolute;
   right: 0;
   top: 0;
 }
+
 .icons i {
   font-size: 22px;
   font-weight: lighter;
@@ -53,6 +58,7 @@ nav {
   left: 0;
   margin-bottom: 20px;
 }
+
 .navbar {
   width: fit-content;
 
@@ -65,9 +71,21 @@ nav {
   align-items: center;
   gap: 40px;
 }
+
 nav div h3 {
   font-size: 15px;
   font-weight: 600;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.1); /* semi-transparent white */
+  backdrop-filter: blur(10px);          /* frosted blur */
+  -webkit-backdrop-filter: blur(10px);  /* Safari support */
+  
+  border: 1px solid rgba(255, 255, 255, 0.5); /* soft border */
+  border-radius: 15px;
+
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05); /* subtle depth */
 }
 
 
@@ -102,4 +120,219 @@ main {
 
   overflow-y: auto;
   position: relative;
+}
+
+/* Home Page */
+.heroLanding {
+  width: 100%;
+  height: 80dvh;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.heroText {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* background: rgb(197, 197, 197); */
+}
+
+.heroTitle {
+  font-size: 2.5rem;       /* 40px */
+  line-height: 3.0625rem;  /* 49px */
+  font-weight: 400;
+  margin-bottom: 2.1875rem; /* 35px */
+}
+
+.heroTitle span {
+  font-size: 4.6875rem;    /* 75px */
+  font-weight: 800;
+  text-transform: capitalize;
+  color: rgb(247, 170, 182);
+}
+
+.heroText h3 {
+  width: 15.625rem;        /* 250px */
+  height: 3.125rem;        /* 50px */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0.9375rem; /* 15px */
+  margin-top: 9.375rem;    /* 150px */
+  border-radius: 0.9375rem 3.125rem 3.125rem 0.9375rem;
+  background-color: black;
+  color: white;
+  overflow: hidden;
+}
+
+.heroText h3 i {
+  height: 100%;
+  width: 3.125rem;         /* 50px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  border: 0.03125rem solid black; /* 0.5px */
+  background-color: white;
+  color: black;
+}
+
+.heroImg {
+  width: 50%;
+  height: 80dvh;
+  border-radius: 0.9375rem; /* 15px */
+  background-color: aquamarine;
+
+  position: relative;
+}
+
+.heroGenImg {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.9375rem; /* 15px */
+  object-fit: cover;
+  object-position: center;
+}
+
+.heroList1 {
+  width: 100%;
+
+  padding: 5px 20px;
+
+  /* background-color: pink; */
+
+  font-size: 0.875rem; /* Font size not adapting on responsive changes to the width*/ 
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  gap: 15px;
+
+  position: absolute;
+  top: 0;
+  z-index: 150;
+}
+.heroList1 li:last-child {
+  margin-left: auto;
+  background-color: black;
+  color: white;
+
+  padding: 10px 50px;
+}
+.heroList1Tile {
+  padding: 10px 25px;
+  border-radius: 15px;
+
+  background-color: white;
+}
+
+.heroList2 {
+  width: 100%;
+
+  /* background-color: pink; */
+
+  display: flex;
+  justify-content: space-around;
+
+  margin-bottom: 10px;
+
+  z-index: 150;
+  position: absolute;
+  bottom: 0;
+} .heroList2Tile {
+  width: 47.5%;
+  height: 200px;
+
+  /* background-color: white; */
+  
+  border-radius: 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Responsiveness */
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 786px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 675px) {
+  .heroLanding {
+    height: 80dvh;
+
+    padding: 15px;
+
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .heroText {
+    width: 100%;
+    height: 50%;
+
+    justify-content: center;
+  } .heroText h3 {
+    margin-top: 30px;
+  } .heroText p {
+    font-size: 15px;
+  }
+  .heroImg {
+    width: 100%;
+    height: 50%;
+  }
+  .heroImg img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+}
+@media (max-width: 400px) {
+  .heroLanding {
+    height: 80dvh;
+  }
+  .heroTitle {
+    margin-bottom: 20px;
+
+    font-size: 37px;
+    line-height: 35px;
+  }
+  .heroText h3 {
+    margin-top: 15px;
+  }
+}
+@media (max-width: 350px) {
+  .heroLanding {
+    height: 70dvh;
+  }
+  .heroText h3 {
+    margin-top: 20px;
+  }
+
+  .heroTitle {
+    margin-bottom: 20px;
+
+    font-size: 30px;
+    line-height: 30px;
+  }
+  .heroTitle span {
+    font-size: 45px;
+  }
+
+  .heroText p {
+    font-size: 10px;
+  }
 }
