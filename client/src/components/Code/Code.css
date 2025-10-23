@@ -1,0 +1,157 @@
+.code-container {
+    width: 100%;
+    height: 100%;
+    padding: 20px 30px 50px 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+.code-container .left,
+.code-container .right {
+    width: 50%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-y: auto;
+}
+
+.code-container .right {
+    background: linear-gradient(60deg, #cccccc, #ffffff);
+    color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    overflow-x: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.code-container .code-editor {
+    flex: 1;
+    background: linear-gradient(135deg, #ffffff, #cccccc);
+    color: #000000;
+    font-size: 16px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #444;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+    /* ----- Key properties for scrolling ----- */
+    min-height: 100%;
+    max-height: 100%; 
+    overflow-y: auto;  
+    resize: vertical;
+}
+
+.code-container .left button,
+.code-container .right button {
+    cursor: pointer;
+    background: linear-gradient(135deg, #8e2de2, #4a00e0);
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 8px;
+    position: absolute; 
+    bottom: 15px;
+    right: 15px;
+    transition: all 0.3s ease;
+}
+
+.code-container .left button:hover,
+.code-container .right button:hover {
+    background: linear-gradient(135deg, #4a00e0, #8e2de2);
+    transform: scale(1.05);
+}
+
+.loading-text {
+    font-style: italic;
+    color: #441432;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Markdown preview styles */
+.markdown-preview {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #222;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-wrap: break-word;
+}
+
+.markdown-preview h1,
+.markdown-preview h2,
+.markdown-preview h3 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+    border-bottom: 1px solid #ddd;
+}
+
+.markdown-preview p {
+    margin: 1em 0;
+}
+
+.markdown-preview a {
+    color: #0070f3;
+    text-decoration: underline;
+}
+
+.markdown-preview ul,
+.markdown-preview ol {
+    padding-left: 1.5em;
+    margin: 1em 0;
+}
+
+.markdown-preview code {
+    background: #f5f5f5;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-family: 'Fira Code', monospace;
+}
+
+.markdown-preview pre {
+    background: #2d2d2d;
+    color: #f8f8f2;
+    padding: 1em;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: 'Fira Code', monospace;
+}
+
+/* Scrollbar styling */
+/* .code-container .code-editor::-webkit-scrollbar,
+.code-container .right::-webkit-scrollbar {
+    width: 8px;
+}
+
+.code-container .code-editor::-webkit-scrollbar-thumb,
+.code-container .right::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 4px;
+} */
+
+/* Responsive */
+@media (max-width: 900px) {
+    .code-container {
+        flex-direction: column;
+    }
+
+    .code-container .left,
+    .code-container .right {
+        width: 100%;
+    }
+
+    .code-container .left button,
+    .code-container .right button {
+        position: static;
+        margin-top: 15px;
+        align-self: flex-end;
+    }
+}

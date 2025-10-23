@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet, NavLink } from 'react-router-dom'
 
 const homeLayout = () => {
     return (
@@ -15,9 +15,15 @@ const homeLayout = () => {
 
             <nav>
                 <div className="navbar glass">
-                    <h3>Home</h3>
-                    <h3>Code</h3>
-                    <h3>Academy</h3>
+                    <NavLink to="/" end className={({ isActive }) => `nav-items${isActive ? ' active' : ''}`}>
+                        <h3>Home</h3>
+                    </NavLink>
+                    <NavLink to="/code" className={({ isActive }) => `nav-items${isActive ? ' active' : ''}`}>
+                        <h3>Code</h3>
+                    </NavLink>
+                    <NavLink to="/about" className={({ isActive }) => `nav-items${isActive ? ' active' : ''}`}>
+                        <h3>About</h3>
+                    </NavLink>
                 </div>
             </nav>
         </div>
