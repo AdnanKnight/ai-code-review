@@ -18,7 +18,7 @@ const About = () => {
                 </div>
                 <span>
                     <h3>
-                    I am Adnan and I am a full stack developer. 
+                    I am Adnan and I am a full stack developer. I mostly use the MERN stack.
                     </h3>
                     <span>
                         <a href="https://www.linkedin.com/in/adnan-haque-ah5" target="_blank" rel="noopener noreferrer">LinkedIn</a>
